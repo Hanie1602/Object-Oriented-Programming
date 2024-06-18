@@ -40,7 +40,7 @@ public class Run {
                 pma.printAir_conditioner();
                 break;
             case 6:
-                //pma.printProductHU();
+                pma.printProductHU();
                 break;
             case 7:
                 pma.updateProduct();
