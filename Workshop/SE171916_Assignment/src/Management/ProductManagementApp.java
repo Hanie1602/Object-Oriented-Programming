@@ -190,6 +190,9 @@ public class ProductManagementApp {
     }
     
     //6.Print information about products with the highest unit price for each product type
+    //===============================================================================================
+    //=========================================CHƯA CHỈNH SỬA==========================================
+    //===============================================================================================
     /*public void printProductHU () {
         List <Smartphone> smartphones = new ArrayList<> ();
         List <TV> tv01 = new ArrayList<> ();
@@ -249,7 +252,7 @@ public class ProductManagementApp {
     //===============================================================================================
     //=========================================ĐÃ CHỈNH SỬA==========================================
     //===============================================================================================
-     public void printProductHU() {
+     /*public void printProductHU() {
         List<Smartphone> smartphones = filterProducts(Smartphone.class);
         List<TV> tvs = filterProducts(TV.class);
         List<Air_conditioner> airConditioners = filterProducts(Air_conditioner.class);
@@ -290,7 +293,7 @@ public class ProductManagementApp {
             }
         }
         return maxPrice;
-    }
+    }*/
    
     //7. Update the product  information based on the code the user entered
     public void updateProduct () {
