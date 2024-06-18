@@ -190,7 +190,7 @@ public class ProductManagementApp {
     }
     
     //6.Print information about products with the highest unit price for each product type
-    public void printProductHU () {
+    /*public void printProductHU () {
         List <Smartphone> smartphones = new ArrayList<> ();
         List <TV> tv01 = new ArrayList<> ();
         List <Air_conditioner> air= new ArrayList<> ();
@@ -243,9 +243,55 @@ public class ProductManagementApp {
             }
         }
         return maxPrice;
+    }*/
+    
+    
+    //===============================================================================================
+    //=========================================ĐÃ CHỈNH SỬA==========================================
+    //===============================================================================================
+     public void printProductHU() {
+        List<Smartphone> smartphones = filterProducts(Smartphone.class);
+        List<TV> tvs = filterProducts(TV.class);
+        List<Air_conditioner> airConditioners = filterProducts(Air_conditioner.class);
+
+        System.out.println("--- PRODUCT WITH HIGHEST UNIT PRICE ---");
+
+        printHighestPricedProduct(smartphones);
+        printHighestPricedProduct(tvs);
+        printHighestPricedProduct(airConditioners);
     }
-    
-    
+
+    private <T extends Product> List<T> filterProducts(Class<T> productType) {
+        List<T> filteredProducts = new ArrayList<>();
+        for (Product p : pList) {
+            if (productType.isInstance(p)) {
+                filteredProducts.add(productType.cast(p));
+            }
+        }
+        return filteredProducts;
+    }
+
+    private <T extends Product> void printHighestPricedProduct(List<T> products) {
+        if (!products.isEmpty()) {
+            float maxPrice = getMaxUnitPrice(products);
+            for (T product : products) {
+                if (product.getPrice() == maxPrice) {
+                    System.out.println(product);
+                }
+            }
+        }
+    }
+
+    private <T extends Product> float getMaxUnitPrice(List<T> products) {
+        float maxPrice = Float.MIN_VALUE;
+        for (Product p : products) {
+            if (p.getPrice() > maxPrice) {
+                maxPrice = p.getPrice();
+            }
+        }
+        return maxPrice;
+    }
+   
     //7. Update the product  information based on the code the user entered
     public void updateProduct () {
         String newName, newBrand, newCpu;
