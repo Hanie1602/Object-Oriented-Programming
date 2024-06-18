@@ -181,7 +181,6 @@ public class ProductManagementApp {
             System.out.println("No Air-conditioner available");
         } else {
             Collections.sort(air,sortDescending());
-            //Cách 2: Collections.sort(air, Comparator.comparingDouble(Product :: getPrice));
             
             System.out.println("--- AIR-CONDITIONER LIST (Descending order of price) ---");
             for(Air_conditioner a : air) {
@@ -218,8 +217,7 @@ public class ProductManagementApp {
         }
         
         if(!tv01.isEmpty()) {
-            Collections.max(tv01, Comparator.comparingDouble(Product::getPrice)).getPrice();
-            float maxTVPrice = getMaxUnitPrice(tv01);               //Cách 2: 
+            float maxTVPrice = getMaxUnitPrice(tv01);
             for(TV t : tv01) {
                 if(t.getPrice() == maxTVPrice) {
                     System.out.println(t);
