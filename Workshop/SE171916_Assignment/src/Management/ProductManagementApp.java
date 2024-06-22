@@ -193,7 +193,7 @@ public class ProductManagementApp {
     //===============================================================================================
     //=========================================CHƯA CHỈNH SỬA==========================================
     //===============================================================================================
-    public void printProductHU () {
+    /*public void printProductHU () {
         List <Smartphone> smartphones = new ArrayList<> ();
         List <TV> tv01 = new ArrayList<> ();
         List <Air_conditioner> air= new ArrayList<> ();
@@ -246,7 +246,7 @@ public class ProductManagementApp {
             }
         }
         return maxPrice;
-    }
+    }*/
     
     
     //===============================================================================================
